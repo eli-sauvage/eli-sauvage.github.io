@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sketch</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+
+<body>
+  <script src="sketch.js"></script>
+  <div style="position: fixed; bottom: 0; height: 21px;">
+    <label for="nb">nombre :</label>
+    <input type="number" value="10" id="nb" style="width: 35px;"/>
+    <label for="precision">precision :</label>
+    <input type="number" value="3" id="precision" style="width: 35px;"/>
+  </div>
+  <script>
+    document.getElementById("nb").addEventListener("change", ()=>init())
+    document.getElementById("precision").addEventListener("change", setup)
+  </script>
+</body>
+
+</html>

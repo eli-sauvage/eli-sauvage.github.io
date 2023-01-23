@@ -6,11 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>elicolh.github.io</title>
+  <style>
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
 
+    #frame {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+  <script>var exports = {};</script>
+  <script src="libraries/p5.min.js"></script>
 </head>
 
 <body>
-  <a href="/circleParam">Circle parametrization visualization</a>
+  <div id="frame"></div>
+  <!-- <script src="build/line.js"></script> 
+  <script src="build/linesData.js"></script>  -->
+  <script src="build/build.js"></script> 
 </body>
 
 </html>
