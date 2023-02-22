@@ -13,7 +13,6 @@ function changeLanguage(language:"fr"|"en"){
 </script>
 
 <template>
-  <!-- <HelloWorld :msg="lang"/> -->
   <TopMenu @changeLanguage="changeLanguage"/>
   <div id="global">
     <SideMenu :lang="lang"/>
@@ -22,6 +21,9 @@ function changeLanguage(language:"fr"|"en"){
 </template>
 
 <style scoped lang="sass">
-// #bonjour
-//   background-color: $color
+@media (max-width: 850px)
+    #sideMenu
+      display: none
+#global
+    display: flex
 </style>

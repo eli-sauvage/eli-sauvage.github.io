@@ -8,8 +8,8 @@ onMounted(sideAnim)
 
 <template>
     <div id="sideMenu">
-        <div v-for="(item, index) in Object.keys(dict)" v-bind:id="item" :class="{ 'currentType': index === 0 }">
-            {{ dict[item][lang as "fr" || "en"]}}
+        <div v-for="(item, index) in Object.keys(dict.sideMenu)" v-bind:id="item" :class="{ 'currentType': index === 0 }">
+            <p>{{ dict.sideMenu[item][lang as "fr" || "en"]}}</p>
         </div>
     </div>
 </template>
@@ -33,7 +33,6 @@ onMounted(sideAnim)
     flex-direction: column
     justify-content: flex-start
     transition: flex-grow .5s
-
 .currentType
     flex-grow: 1
 </style>
