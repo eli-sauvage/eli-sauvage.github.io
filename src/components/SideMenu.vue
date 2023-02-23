@@ -1,15 +1,30 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import {dict} from "../ts/languages"
+import { dict } from "../ts/languages"
 import sideAnim from "../ts/sideMenu"
+import $ from "jquery"
 const props = defineProps<{ lang: string }>()
 onMounted(sideAnim)
+function scrollTo(id: number) {
+    console.log(id)
+    if (id == 0) $("body")[0].scrollIntoView({ behavior: "smooth" })
+    else $("#br" + id)[0].scrollIntoView({ behavior: "smooth" })
+}
+window.onscroll = function(){
+    let sticky = window.innerHeight
+      if (window.pageYOffset >= sticky) {
+        $("#sideMenu").addClass("sticky")
+    } else {
+        $("#sideMenu").removeClass("sticky");
+    }
+}
 </script>
 
 <template>
     <div id="sideMenu">
-        <div v-for="(item, index) in Object.keys(dict.sideMenu)" v-bind:id="item" :class="{ 'currentType': index === 0 }">
-            <p>{{ dict.sideMenu[item][lang as "fr" || "en"]}}</p>
+        <div v-for="(item, index) in Object.keys(dict.sideMenu)" v-bind:id="item" :class="{ 'currentType': index === 0 }"
+            @click="scrollTo(index)">
+            <p class="typetext">{{ dict.sideMenu[item][lang as "fr" || "en"] }}</p>
         </div>
     </div>
 </template>
@@ -21,18 +36,30 @@ onMounted(sideAnim)
     display: flex
     flex-direction: column
     position: sticky
-    height: calc(100vh - $topHeight)
-    top: $topHeight
+    height: 100vh
+    bottom: 0
+    background: #cccccc
 
-#sideMenu *
-    font-size: 32px
-    text-align: center
+#sideMenu > *
     display: flex
-    width: 100%
     justify-content: center
     flex-direction: column
     justify-content: flex-start
     transition: flex-grow .5s
+p
+    justify-content: flex-start
+    font-size: 32px
+    text-align: center
+    margin: 5px 2%
+    border-radius: 10px
+
+.typetext
+    cursor: pointer
 .currentType
     flex-grow: 1
+.currentType p
+    background: #aaaaaa
+.sticky
+    position: fixed
+    top: 0
 </style>

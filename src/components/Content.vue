@@ -15,10 +15,9 @@ defineProps<{ lang: string }>()
                 </div>
                 <div class="icon3d" :id="projectKey + 'Icon'">
                     <Icon3D :id="projectKey"></Icon3D>
-                        <!-- <p>TODO image {{ projectKey }}</p> -->
                 </div>
             </div>
-            <hr v-if="indexType != Object.keys(content).length -1">
+            <hr v-if="indexType != Object.keys(content).length -1" :id="'br' + (indexType +1).toString()">
         </div>
 
     </div>
@@ -30,6 +29,8 @@ defineProps<{ lang: string }>()
     // background-color: red
     max-width: 70vw
     height: auto
+    padding: 0 10%
+    margin:0 auto
 .projectType
     margin: 5%
 .project
@@ -37,6 +38,8 @@ defineProps<{ lang: string }>()
     flex-direction: row
     min-height: 30vh
     margin-bottom: 25px
+    background: #555555
+    border-radius: 20px
 .project-reverse
     flex-direction: row-reverse
 .icon3d
@@ -49,4 +52,5 @@ defineProps<{ lang: string }>()
     min-width: 20vw
 .projectDescription
     flex-grow: 2
+    color: white
 </style>

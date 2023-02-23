@@ -12,20 +12,35 @@ let targetScale:number
 
 function init() {
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color("white")
+    // scene.background = new THREE.Color("#555555")
     const element = document.querySelector("#container" + props.id) as HTMLElement
     const camera = new THREE.PerspectiveCamera(75, element.offsetWidth / element.offsetHeight, 0.1, 1000);
     var raycaster = new THREE.Raycaster();
     var plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -1);
     var intersectPoint = new THREE.Vector3();
 
-    const light = new THREE.AmbientLight(0xffffff); // soft white light
-    scene.add(light);
 
+    const Alight = new THREE.AmbientLight(0xffffff, 2); // soft white light
+    scene.add(Alight);
 
-
-    const renderer = new THREE.WebGLRenderer({antialias:true});
+    const renderer = new THREE.WebGLRenderer({antialias:true, alpha: true});
     renderer.setSize(element.offsetWidth, element.offsetHeight);
+    renderer.setClearColor(0x000000, 0);
+
+    // const controls = new OrbitControls(camera, renderer.domElement);
+
+    window.addEventListener('resize', onWindowResize, false);
+
+    function onWindowResize() {
+
+        camera.aspect = element.offsetWidth / element.offsetHeight;
+
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(element.offsetWidth, element.offsetHeight);
+
+    }
+
     element.appendChild(renderer.domElement);
     const mouse = new THREE.Vector2();
     element.addEventListener("mousemove", onMouseMove)
@@ -46,21 +61,13 @@ function init() {
         raycaster.setFromCamera(mouse, camera);
         raycaster.ray.intersectPlane(plane, intersectPoint);
         model.lookAt(intersectPoint);
-
     }
-    // const controls = new OrbitControls(camera, renderer.domElement);
-
-
-    // const geometry = new THREE.BoxGeometry(1, 1, 1);
-    // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    // const cube = new THREE.Mesh(geometry, material);
-    // scene.add(cube);
 
     let model: THREE.Group
 
     const fbxLoader = new FBXLoader()
     fbxLoader.load(
-        '/discord.fbx',
+        '/' + "helibot" + '.fbx',
         (object) => {
             model = object
             object.scale.setScalar(.01)
@@ -68,6 +75,8 @@ function init() {
             object.rotation.y = Math.random() * Math.PI * 2
             object.position.set(0,0,0)
             scene.add(object)
+            object.castShadow=true
+            object.receiveShadow = true
         },
         (xhr) => {
             console.log((xhr.loaded / xhr.total) * 100 + '% loaded')

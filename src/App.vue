@@ -2,21 +2,23 @@
 import Content from './components/Content.vue';
 import HelloWorld from './components/HelloWorld.vue'
 import SideMenu from './components/SideMenu.vue';
-import TopMenu from './components/TopMenu.vue'
+import languages from './components/languages.vue';
+import WelcomePage from './components/WelcomePage.vue'
 import { ref } from 'vue'
 
 let lang = ref("fr")
-function changeLanguage(language:"fr"|"en"){
-  lang.value=language
+function changeLanguage(language: "fr" | "en") {
+  lang.value = language
   console.log("p " + lang)
 }
 </script>
 
 <template>
-  <TopMenu @changeLanguage="changeLanguage"/>
+  <languages :lang="lang" @changeLanguage="changeLanguage"></languages>
+  <WelcomePage :lang="lang"/>
   <div id="global">
-    <SideMenu :lang="lang"/>
-    <Content :lang="lang"/>
+    <SideMenu :lang="lang" />
+    <Content :lang="lang" />
   </div>
 </template>
 
