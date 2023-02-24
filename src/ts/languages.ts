@@ -1,3 +1,4 @@
+export type langName = 'fr' | 'en'
 type field = { fr: string, en: string }
 type elem = { [id: string]: field }
 //TODO: rename
@@ -24,17 +25,17 @@ export let dict:
         }
     },
     sideMenu: {
-        menuPerso: {
-            fr: "projets personnels",
-            en: "personnal projects"
+        perso: {
+            fr: "Projets personnels",
+            en: "Personnal projects"
         },
-        menuEcole: {
-            fr: "projets scolaires",
-            en: "school projets"
+        ecole: {
+            fr: "Projets scolaires",
+            en: "School projets"
         },
-        menuDivers: {
-            fr: "projets divers",
-            en: "miscellianous projects"
+        divers: {
+            fr: "Projets divers",
+            en: "Miscellianous projects"
         },
     },
     projects: {

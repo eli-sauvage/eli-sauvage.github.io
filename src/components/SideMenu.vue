@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { dict } from "../ts/languages"
+import { dict, langName} from "../ts/languages"
 import sideAnim from "../ts/sideMenu"
 import $ from "jquery"
-const props = defineProps<{ lang: string }>()
+const props = defineProps<{ lang: langName }>()
 onMounted(sideAnim)
 function scrollTo(id: number) {
     console.log(id)
-    if (id == 0) $("body")[0].scrollIntoView({ behavior: "smooth" })
-    else $("#br" + id)[0].scrollIntoView({ behavior: "smooth" })
+    $(".scroll"+id)[0].scrollIntoView({ behavior: "smooth" })
+    // if (id == 0) $("#content")[0].scrollIntoView({ behavior: "smooth" })
+    // else $("#br" + id)[0].scrollIntoView({ behavior: "smooth" })
 }
 window.onscroll = function(){
     let sticky = window.innerHeight
@@ -24,7 +25,7 @@ window.onscroll = function(){
     <div id="sideMenu">
         <div v-for="(item, index) in Object.keys(dict.sideMenu)" v-bind:id="item" :class="{ 'currentType': index === 0 }"
             @click="scrollTo(index)">
-            <p class="typetext">{{ dict.sideMenu[item][lang as "fr" || "en"] }}</p>
+            <p class="typetext">{{ dict.sideMenu[item][lang] }}</p>
         </div>
     </div>
 </template>
@@ -38,7 +39,8 @@ window.onscroll = function(){
     position: sticky
     height: 100vh
     bottom: 0
-    background: #cccccc
+    // background: #cccccc
+    padding: 30vh 0
 
 #sideMenu > *
     display: flex
@@ -49,9 +51,13 @@ window.onscroll = function(){
 p
     justify-content: flex-start
     font-size: 32px
-    text-align: center
+    text-align: left
     margin: 5px 2%
     border-radius: 10px
+    // padding-left: 30px
+    padding: 5px 0 10px 5px
+    margin-left: 20px
+    transition: transform 250ms ease
 
 .typetext
     cursor: pointer
@@ -59,6 +65,7 @@ p
     flex-grow: 1
 .currentType p
     background: #aaaaaa
+    transform: translateX(50px)
 .sticky
     position: fixed
     top: 0

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import $ from "jquery"
-import { dict } from "../ts/languages"
-const props = defineProps<{ lang: string }>()
+import { dict, langName } from "../ts/languages"
+const props = defineProps<{ lang: langName }>()
 function scrollToContent(){
     $("#global")[0].scrollIntoView({behavior:"smooth"})
 }
@@ -10,10 +10,10 @@ function scrollToContent(){
 <template>
     <div id="welcomePage">
         <p id="nom">Eli SAUVAGE</p>
-        <p id="sujet">{{dict.welcomePage.sujet[lang as "fr" || "en"]}}</p>
-        <p id="ecole">{{ dict.welcomePage.ecole[lang as "fr" || "en"] }}</p>
+        <p id="sujet">{{dict.welcomePage.sujet[lang]}}</p>
+        <p id="ecole">{{ dict.welcomePage.ecole[lang] }}</p>
         <div id="projets">
-            <p>{{ dict.welcomePage.projets[lang as "fr" || "en"] }}</p>
+            <p>{{ dict.welcomePage.projets[lang] }}</p>
             <img src="../assets/arrow.svg" id="en" @click="scrollToContent()" />
         </div>
     </div>

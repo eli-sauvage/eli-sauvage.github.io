@@ -4,9 +4,10 @@ import HelloWorld from './components/HelloWorld.vue'
 import SideMenu from './components/SideMenu.vue';
 import languages from './components/languages.vue';
 import WelcomePage from './components/WelcomePage.vue'
-import { ref } from 'vue'
+import { Ref, ref, VueElement } from 'vue'
+import { langName } from "./ts/languages"
 
-let lang = ref("fr")
+let lang= ref("fr") as Ref<langName>
 function changeLanguage(language: "fr" | "en") {
   lang.value = language
   console.log("p " + lang)
@@ -18,7 +19,7 @@ function changeLanguage(language: "fr" | "en") {
   <WelcomePage :lang="lang"/>
   <div id="global">
     <SideMenu :lang="lang" />
-    <Content :lang="lang" />
+    <Content :lang="lang"/>
   </div>
 </template>
 
