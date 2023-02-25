@@ -12,7 +12,7 @@ defineProps<{ lang: langName }>()
             <h1>{{ dict.sideMenu[key][lang]}}</h1>
             <div :class="['project', (index + indexType * 3)%2==0?'project-reverse':'']" v-for="(project, projectKey, index) of projectType" :id="(projectKey as string)">
                 <div class="projectDescription" :id="projectKey + 'Description'"
-                    v-html="project[lang]">
+                    v-html="project.description[lang]">
                 </div>
                 <div class="icon3d" :id="projectKey + 'Icon'">
                     <Icon3D :id="projectKey"></Icon3D>
@@ -30,8 +30,10 @@ defineProps<{ lang: langName }>()
     // background-color: red
     max-width: 70vw
     height: auto
-    padding: 0 10%
-    margin:0 auto
+    padding-right: 10%
+    // margin:0 auto
+    right: 0
+    position: absolute
 .projectType:not(:last-child)
     margin: 5%
     margin-bottom: 20vh
@@ -40,21 +42,25 @@ defineProps<{ lang: langName }>()
     flex-direction: row
     min-height: 30vh
     margin-bottom: 25px
-    background: #555555
-    border-radius: 20px
+    // background: #555555
+    // border-radius: 20px
 .project-reverse
     flex-direction: row-reverse
 .icon3d
     flex-grow: 1
     flex-shrink: 0
     flex-basis: 200px
-    // background-color: red
-    // height: 100%
-    // width: auto
     min-width: 20vw
 .projectDescription
     flex-grow: 2
-    color: white
+    align-items: center
+    display: flex
+
 h1
     text-align: center
+</style>
+<style lang="sass">
+span.important
+    font-weight: bold
+
 </style>

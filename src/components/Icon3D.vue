@@ -20,7 +20,7 @@ function init() {
     var intersectPoint = new THREE.Vector3();
 
 
-    const Alight = new THREE.AmbientLight(0xffffff, 2); // soft white light
+    const Alight = new THREE.AmbientLight(0xffffff, 1.2); // soft white light
     scene.add(Alight);
 
     const renderer = new THREE.WebGLRenderer({antialias:true, alpha: true});
@@ -67,7 +67,7 @@ function init() {
 
     const fbxLoader = new FBXLoader()
     fbxLoader.load(
-        '/' + "helibot" + '.fbx',
+        '/' + props.id + '.fbx',
         (object) => {
             model = object
             object.scale.setScalar(.01)

@@ -67,6 +67,6 @@ p
     background: #aaaaaa
     transform: translateX(50px)
 .sticky
-    position: fixed
+    position: fixed !important
     top: 0
 </style>

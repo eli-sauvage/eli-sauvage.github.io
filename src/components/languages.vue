@@ -25,6 +25,7 @@ function click(lang: string) {
     position: fixed
     bottom: 25px
     right: 25px
+    z-index: 1000
 
 $radius:6px
 #fr
