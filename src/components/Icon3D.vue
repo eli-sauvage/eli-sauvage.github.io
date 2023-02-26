@@ -43,26 +43,30 @@ function init() {
 
     element.appendChild(renderer.domElement);
     const mouse = new THREE.Vector2();
-    element.addEventListener("mousemove", onMouseMove)
-    element.addEventListener("mouseenter", ()=> {
+    element.addEventListener("mousemove", (event)=>onMouseMove(event.offsetX, event.offsetY))
+    element.addEventListener("mouseenter", mouseEnter)
+    element.addEventListener("mouseleave", mouseLeave)
+    element.addEventListener("touchstart", mouseEnter)
+    element.addEventListener("touchend", mouseLeave)
+    element.addEventListener("touchmove", (event)=>onMouseMove(event.touches[0].clientX, event.touches[0].clientY ))
+
+    function mouseEnter(){
         mouseInside = true
         targetScale = 0.015
-    })
-    element.addEventListener("mouseleave", () => {
+    }
+    function mouseLeave(){
         mouseInside = false
         targetScale = 0.01
-    })
-
-
-    function onMouseMove(event: MouseEvent) {
+    }
+    function onMouseMove(x:number, y:number) {
         if(!mouseInside) return
-        mouse.x = ((event.offsetX / element.offsetWidth) * 2 - 1) / 2;
-        mouse.y = (-(event.offsetY / element.offsetHeight) * 2 + 1) / 2;
+        mouse.x = ((x / element.offsetWidth) * 2 - 1) / 2;
+        mouse.y = (-(y / element.offsetHeight) * 2 + 1) / 2;
         raycaster.setFromCamera(mouse, camera);
         raycaster.ray.intersectPlane(plane, intersectPoint);
         model.lookAt(intersectPoint);
     }
-
+    
     let model: THREE.Group
 
     const fbxLoader = new FBXLoader()
@@ -79,7 +83,7 @@ function init() {
             object.receiveShadow = true
         },
         (xhr) => {
-            console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+            // console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
         },
         (error) => {
             console.log(error)

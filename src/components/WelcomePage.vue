@@ -2,15 +2,15 @@
 import $ from "jquery"
 import { dict, langName } from "../ts/languages"
 const props = defineProps<{ lang: langName }>()
-function scrollToContent(){
-    $("#global")[0].scrollIntoView({behavior:"smooth"})
+function scrollToContent() {
+    $("#global")[0].scrollIntoView({ behavior: "smooth" })
 }
 </script>
 
 <template>
     <div id="welcomePage">
         <p id="nom">Eli SAUVAGE</p>
-        <p id="sujet">{{dict.welcomePage.sujet[lang]}}</p>
+        <p id="sujet">{{ dict.welcomePage.sujet[lang] }}</p>
         <p id="ecole">{{ dict.welcomePage.ecole[lang] }}</p>
         <div id="projets">
             <p>{{ dict.welcomePage.projets[lang] }}</p>
@@ -30,16 +30,24 @@ function scrollToContent(){
     background-color: #222222
 p
     text-align: center
+    margin: 0 10px
 #nom
     font-size: 100px
     margin-top: 5%
 #sujet
     font-size: 40px
     margin-top: 20px
-
 #ecole
     font-size: 30px
     margin-top: 20px
+@media (max-width: 1200px)
+    #nom
+        font-size: 40px
+        margin-top: 20%
+    #sujet
+        font-size: 15px
+    #ecole
+        font-size: 15px
 #projets
     position: absolute
     bottom: 50px

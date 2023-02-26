@@ -10,7 +10,6 @@ import { langName } from "./ts/languages"
 let lang= ref("fr") as Ref<langName>
 function changeLanguage(language: "fr" | "en") {
   lang.value = language
-  console.log("p " + lang)
 }
 </script>
 
@@ -24,9 +23,12 @@ function changeLanguage(language: "fr" | "en") {
 </template>
 
 <style scoped lang="sass">
-@media (max-width: 850px)
+@media (max-width: 1200px)
     #sideMenu
       display: none
 #global
     display: flex
+</style>
+<style>
+
 </style>

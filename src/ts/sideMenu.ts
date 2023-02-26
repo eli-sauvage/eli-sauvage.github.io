@@ -13,7 +13,6 @@ export default function(){
             let size = computeVisibleSize(project)
             if (largestContentIndex != i && size > computeVisibleSize(projects[largestContentIndex])) {
                 largestContentIndex = i
-                console.log("changing")
                 // $(".sideMenu").on("animationend", ()=>{
                 $(".currentType").removeClass("currentType")
                 $(titles[largestContentIndex]).addClass("currentType")

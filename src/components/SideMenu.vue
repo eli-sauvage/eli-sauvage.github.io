@@ -6,7 +6,6 @@ import $ from "jquery"
 const props = defineProps<{ lang: langName }>()
 onMounted(sideAnim)
 function scrollTo(id: number) {
-    console.log(id)
     $(".scroll"+id)[0].scrollIntoView({ behavior: "smooth" })
     // if (id == 0) $("#content")[0].scrollIntoView({ behavior: "smooth" })
     // else $("#br" + id)[0].scrollIntoView({ behavior: "smooth" })
