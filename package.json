@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "publish": "vue-tsc && vite build && gh-pages -d dist"
   },
   "dependencies": {
     "three": "^0.149.0",

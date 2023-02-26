@@ -41,20 +41,6 @@ export let dict:
     },
     projects: {
         perso: {
-            helibot: {
-                description: {
-                    fr: "<p>Mon premier projet personnel (commencé au lycée). C'est un robot discord permettant de compter le temps que passent les différents joueurs en appel vocal sur le serveur : 1mn passée sur le serveur équivaut à 1 point, le robot assigne ensuite des roles en fonction du nombre de points.<br>Actuellement hébergé sur une instance compute engine de <span class=\"important\">Google Cloud</span></p>",
-                    en: "<p>My first personal project (in developement since highscool). This is a discord bot that couts points based on the time spent in vocal channels by the users : 1mn equals 1 point. Based on this score, the bot assigns a role to the user.<br>This project is currently hosted on a compute engine instance at <span class=\"important\">Google Cloud</span></p>"
-                },
-                link: "https://github.com/elicolh/helibot"
-            },
-            dawnLauncher: {
-                description: {
-                    fr: "<p>Ce project codé en <span class=\"important\">C#</span> est une petite application windows permettant de lancer, télécharger et mettre à jour un jeu vidéo. L'application détecte lorsque le jeu n'est plus à jour.<br>L'application gère également un système de compte utilisateur</p>",
-                    en: "<p>This prject is a small game launcher programmed in <span class=\"important\">C#</span>. It allows the user to launch, download and update the game when needed.<br>This app also supports a user accounts system.</p>"
-                },
-                link: "https://github.com/elicolh/DawnLauncher"
-            },
             portfolio: {
                 description: {
                     fr: "<p>Le portfolio sur lequel vous êtes actuellement a été codé avec <span class=\"important\">Vue.js</span> et hébergé sur github pages. J'ai utilisé <span class=\"important\">WebPack et Vite</span> afin de l'exporter en version statique. Les icônes 3D on été faits grâce à Blender</p>",
@@ -68,9 +54,30 @@ export let dict:
                     en: "<p>For the association \"Junior Conseil UTT\" of which I am a member since 2021, I developped a web app in <span class=\"important\">Typescript (MVC architecture)</span> that allows to analyze every metrics of the club's social networks. The app uses the <span class=\"important\">APIs</span> of Facebook, Instagram, Twitter and LinkedIn<br>Currently hosted on a <span class=\"important\">Kubernetees Cluster</span></p>"
                 },
                 link: "https://github.com/elicolh/social-media"
+            },
+            helibot: {
+                description: {
+                    fr: "<p>Mon premier projet personnel (commencé au lycée). C'est un robot discord permettant de compter le temps que passent les différents joueurs en appel vocal sur le serveur : 1mn passée sur le serveur équivaut à 1 point, le robot assigne ensuite des roles en fonction du nombre de points.<br>Actuellement hébergé sur une instance compute engine de <span class=\"important\">Google Cloud</span></p>",
+                    en: "<p>My first personal project (in developement since highscool). This is a discord bot that couts points based on the time spent in vocal channels by the users : 1mn equals 1 point. Based on this score, the bot assigns a role to the user.<br>This project is currently hosted on a compute engine instance at <span class=\"important\">Google Cloud</span></p>"
+                },
+                link: "https://github.com/elicolh/helibot"
+            },
+            dawnLauncher: {
+                description: {
+                    fr: "<p>Ce project codé en <span class=\"important\">C#</span> est une petite application windows permettant de lancer, télécharger et mettre à jour un jeu vidéo. L'application détecte lorsque le jeu n'est plus à jour.<br>L'application gère également un système de compte utilisateur</p>",
+                    en: "<p>This prject is a small game launcher programmed in <span class=\"important\">C#</span>. It allows the user to launch, download and update the game when needed.<br>This app also supports a user accounts system.</p>"
+                },
+                link: "https://github.com/elicolh/DawnLauncher"
             }
         },
         ecole: {
+            lo14: {
+                description: {
+                    fr: "<p>Pour la matière \"Administration des systèmes : Bash et Docker\"(automne 2021), j'ai du créer un projet entièrement écrit en <span class=\"important\">Bash</span>, reproduisant un système d'archivage de fichiers : l'application devait être capable de stocker une arborescence de fichier ainsi que leur contenu dans un seul fichier archive, tout en permettant l'envoi d'archives via le réseau</p>",
+                    en: "In the class \"Administration of systems : Bash and Docker\"(autumn 2021), I had to create a project entirely in <span class=\"important\">Bash</span>, that reproduced an file archive system : the app had to be capable of recursively stocking a file system as well as their content in a single archive file. It is also possible to send an archive on the network</p>"
+                },
+                link: "https://github.com/elicolh/lo14-projet"
+            },
             lo02: {
                 description: {
                     fr: "<p>Ce projet en <span class=\"important\">java</span> est un jeu vidéo basique, qui suit l'architecture <span class=\"important\">Model View Controller</span> en Java. C'est un jeu de stratégie sur lequel on peut paramétrer notre armée puis la déployer contre celle de l'adversaire dans différentes zones de batailles. Il utilise par exemple <span class=\"important\">java swing ainsi que les Threads</span>.<br>Ce projet a été réalisé dans le cadre de la matière \"Principe et pratique de la programmation orientée objets\" en automne 2022</p>",
@@ -83,13 +90,7 @@ export let dict:
                     en: "<p>In the class \"Introduction to C and Python programming languages\"(in spring 2021), I created a <span class=\"important\">console app in C</span> representing a simulation of a car park manager, as well as a <span class=\"important\">python</span> app simulating a social network. This python app is a web server, with a database and a frontend made with bootstrap.</p>"
                 },
                 link: "https://github.com/elicolh/nf05A-python-project"
-            }, lo14: {
-                description: {
-                    fr: "<p>Pour la matière \"Administration des systèmes : Bash et Docker\"(automne 2021), j'ai du créer un projet entièrement écrit en <span class=\"important\">Bash</span>, reproduisant un système d'archivage de fichiers : l'application devait être capable de stocker une arborescence de fichier ainsi que leur contenu dans un seul fichier archive, tout en permettant l'envoi d'archives via le réseau</p>",
-                    en: "In the class \"Administration of systems : Bash and Docker\"(autumn 2021), I had to create a project entirely in <span class=\"important\">Bash</span>, that reproduced an file archive system : the app had to be capable of recursively stocking a file system as well as their content in a single archive file. It is also possible to send an archive on the network</p>"
-                },
-                link: "https://github.com/elicolh/lo14-projet"
-            },
+            }
         },
         divers: {
             blender: {

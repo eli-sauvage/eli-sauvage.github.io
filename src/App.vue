@@ -6,6 +6,7 @@ import languages from './components/languages.vue';
 import WelcomePage from './components/WelcomePage.vue'
 import { Ref, ref, VueElement } from 'vue'
 import { langName } from "./ts/languages"
+import CV from "./components/CV.vue"
 
 let lang= ref("fr") as Ref<langName>
 function changeLanguage(language: "fr" | "en") {
@@ -15,6 +16,7 @@ function changeLanguage(language: "fr" | "en") {
 
 <template>
   <languages :lang="lang" @changeLanguage="changeLanguage"></languages>
+  <CV/>
   <WelcomePage :lang="lang"/>
   <div id="global">
     <SideMenu :lang="lang" />
