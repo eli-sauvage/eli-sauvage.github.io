@@ -1,30 +1,38 @@
 <script setup lang="ts">
-import { connect } from 'http2';
-import { dict, langName } from '../ts/languages';
-import Icon3D from './Icon3D.vue';
-let content = dict.projects
-defineProps<{ lang: langName }>()
-function openLink(link: string) {
-    if (link)
-        window.open(link, '_blank')
-}
+import { ref } from "vue";
+import { dict, langName } from "../ts/languages";
+import Icon3D from "./Icon3D.vue";
+
+defineProps<{ lang: langName }>();
+const content = ref(dict.projects);
 </script>
 
 <template>
+    <p>{{ lang }}</p>
     <div id="content">
         <div :class="['projectType', 'scroll' + indexType]" v-for="(projectType, key, indexType) in content" :id="key">
             <h1>{{ dict.sideMenu[key][lang] }}</h1>
-            <div :class="['project', (index + indexType * 3) % 2 == 0 ? 'project-reverse' : '']"
-                v-for="(project, projectKey, index) of projectType" :id="(projectKey as string)">
-                <div class="projectDescription" :id="projectKey + 'Description'" v-html="project.description[lang]">
+            <div :class="[
+                'project',
+                (index + indexType * 3) % 2 == 0 ? 'project-reverse' : '',
+            ]" v-for="(project, projectKey, index) of projectType" :id="projectKey as string">
+                <div>
+                    <h3>
+                        {{ project.title[lang] }}
+                        {{ project.link ? "[" : "" }}
+                        <a v-if="project.link" :href="project.link" target="_blank">
+                            {{ dict.general.seeCode[lang] }}
+                        </a>
+                        {{ project.link ? "]" : "" }}
+                    </h3>
+                    <div class="projectDescription" :id="projectKey + 'Description'"
+                        v-html="project.description[lang]" />
                 </div>
-                <div :class="['icon3d', project.link ? 'selectionable' : '']" :id="projectKey + 'Icon'"
-                    @click="openLink(project.link)">
+                <div :class="['icon3d', project.link ? 'selectionable' : '']" :id="projectKey + 'Icon'">
                     <Icon3D :id="projectKey"></Icon3D>
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -84,5 +92,4 @@ h1
 <style lang="sass">
 span.important
     font-weight: bold
-
 </style>
