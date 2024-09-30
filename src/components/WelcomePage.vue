@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import $ from "jquery"
-import { dict, langName } from "../ts/languages"
-const props = defineProps<{ lang: langName }>()
+import { dict, langName } from "../ts/languages";
+defineProps<{ lang: langName }>();
 function scrollToContent() {
-    $("#global")[0].scrollIntoView({ behavior: "smooth" })
+    document.querySelector("#global")?.scrollIntoView({ behavior: "smooth" });
 }
 </script>
 
@@ -61,7 +60,7 @@ img
     transform: rotate(90deg)
     margin: 0 auto
     display: block
-    animation: bounce 1s ease infinite alternate 
+    animation: bounce 1s ease infinite alternate
 
 
 
@@ -69,10 +68,10 @@ img:hover
     animation: zoom 250ms ease forwards
 
 
-@keyframes bounce 
-    from 
+@keyframes bounce
+    from
         transform: scale(.5) rotate(90deg)
-    to 
+    to
         transform: scale(1) rotate(90deg)
 @keyframes zoom
     to

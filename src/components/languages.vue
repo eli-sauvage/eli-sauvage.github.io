@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import $ from "jquery"
-const emit = defineEmits(['changeLanguage'])
+const emit = defineEmits(["changeLanguage"]);
 function click(lang: string) {
-    emit('changeLanguage', lang)
-    $("img").removeClass("active")
-    $(`#${lang}`).addClass("active")
+    emit("changeLanguage", lang);
+    document.querySelector("img")?.classList.remove("active");
+    document.querySelector(`#${lang}`)?.classList.add("active");
 }
 </script>
 
@@ -37,4 +36,3 @@ img
 img.active
     opacity: 1
 </style>
-

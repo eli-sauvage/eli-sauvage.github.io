@@ -1,28 +1,28 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { dict, langName} from "../ts/languages"
-import sideAnim from "../ts/sideMenu"
-import $ from "jquery"
-const props = defineProps<{ lang: langName }>()
-onMounted(sideAnim)
+import { dict, langName } from "../ts/languages";
+import sideAnim from "../ts/sideMenu";
+defineProps<{ lang: langName }>();
+onMounted(sideAnim);
 function scrollTo(id: number) {
-    $(".scroll"+id)[0].scrollIntoView({ behavior: "smooth" })
-    // if (id == 0) $("#content")[0].scrollIntoView({ behavior: "smooth" })
-    // else $("#br" + id)[0].scrollIntoView({ behavior: "smooth" })
+    document
+        .querySelector(".scroll" + id)
+        ?.scrollIntoView({ behavior: "smooth" });
 }
-window.onscroll = function(){
-    let sticky = window.innerHeight
-      if (window.pageYOffset >= sticky) {
-        $("#sideMenu").addClass("sticky")
+window.onscroll = function () {
+    let sticky = window.innerHeight;
+    let sideMenu = document.querySelector("#sideMenu");
+    if (window.pageYOffset >= sticky) {
+        sideMenu?.classList.add("sticky");
     } else {
-        $("#sideMenu").removeClass("sticky");
+        sideMenu?.classList.remove("sticky");
     }
-}
+};
 </script>
 
 <template>
     <div id="sideMenu">
-        <div v-for="(item, index) in Object.keys(dict.sideMenu)" v-bind:id="item" :class="{ 'currentType': index === 0 }"
+        <div v-for="(item, index) in Object.keys(dict.sideMenu)" v-bind:id="item" :class="{ currentType: index === 0 }"
             @click="scrollTo(index)">
             <p class="typetext">{{ dict.sideMenu[item][lang] }}</p>
         </div>
