@@ -8,7 +8,6 @@ const content = ref(dict.projects);
 </script>
 
 <template>
-    <p>{{ lang }}</p>
     <div id="content">
         <div :class="['projectType', 'scroll' + indexType]" v-for="(projectType, key, indexType) in content" :id="key">
             <h1>{{ dict.sideMenu[key][lang] }}</h1>
