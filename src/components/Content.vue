@@ -79,8 +79,6 @@ const content = ref(dict.projects);
     flex-shrink: 0
     flex-basis: 200px
     min-width: 20vw
-.icon3d.selectionable
-    cursor: pointer
 .projectDescription
     flex-grow: 2
     align-items: center
