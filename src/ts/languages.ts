@@ -63,8 +63,8 @@ export let dict: {
             },
             portfolio: {
                 title: {
-                    fr: "Application de paiement pour un bar",
-                    en: "Payment app for a bar",
+                    fr: "Création de ce portfolio",
+                    en: "Creatio of this portfolio",
                 },
                 description: {
                     fr: '<p>Ce portfolio a été créé grâce au framework <span class="important">Vue.js</span>. Il est actuellement hébergé sur Github pages et déployé automatiquement avec Github Actions. Le moteur <span class="important">Vite</span> a été utilisé afin de l\'exporter en version statique. Les icônes 3D on été créés avec Blender.</p>',
@@ -74,8 +74,8 @@ export let dict: {
             },
             socialMedia: {
                 title: {
-                    fr: "Application de paiement pour un bar",
-                    en: "Payment app for a bar",
+                    fr: "Analyse de données de résaux sociaux pour une association étudiante",
+                    en: "Social network data analyzer for a school club",
                 },
                 description: {
                     fr: '<p>Pour l\'association "Junior Conseil UTT" dont je faisais partie de 2021 à 2023, j\'ai développé une application web en <span class="important">Typescript (architecture MVC)</span> permettant d\'analyser les différentes statistiques des réseaux sociaux de l\'asso. L\'application utlise les <span class="important">APIs</span> de Facebook, Instagram, Twitter et LinkedIn.<br>Actuellement hébergé sur un <span class="important">Cluster Kubernetees</span>.</p>',
@@ -85,8 +85,8 @@ export let dict: {
             },
             helibot: {
                 title: {
-                    fr: "Application de paiement pour un bar",
-                    en: "Payment app for a bar",
+                    fr: "Application Discord",
+                    en: "Discord app",
                 },
                 description: {
                     fr: '<p>Mon premier projet personnel (commencé au lycée). C\'est un robot discord permettant de compter le temps que passent les différents utilisateur en appel vocal sur le serveur : 1 minute passée sur le serveur équivaut à 1 point, le robot assigne ensuite des rôles en fonction du nombre de points.<br>Actuellement hébergé sur une instance Compute Engine de <span class="important">Google Cloud</span>.</p>',
@@ -96,8 +96,8 @@ export let dict: {
             },
             dawnLauncher: {
                 title: {
-                    fr: "Application de paiement pour un bar",
-                    en: "Payment app for a bar",
+                    fr: "Lanceur d'un jeu video",
+                    en: "Video game lancher",
                 },
                 description: {
                     fr: "<p>Ce project codé en <span class=\"important\">C#</span> est une petite application graphique pour Windows permettant de lancer, télécharger et mettre à jour un jeu vidéo. L'application détecte lorsque le jeu n'est plus à jour.<br>Cette dernière gère également un système de compte utilisateur</p>",
@@ -109,8 +109,8 @@ export let dict: {
         ecole: {
             lo14: {
                 title: {
-                    fr: "Application de paiement pour un bar",
-                    en: "Payment app for a bar",
+                    fr: "Archivage et partage de fichiers sur le réseau",
+                    en: "File archive and network sharing",
                 },
                 description: {
                     fr: "<p>Pour la matière \"Administration des systèmes : Bash et Docker\"(automne 2021), j'ai dû créer un projet entièrement écrit en <span class=\"important\">Bash</span>, reproduisant un système d'archivage de fichiers : l'application devait être capable de stocker une arborescence de fichiers ainsi que leur contenu dans un seul fichier archive, tout en permettant l'envoi d'archives via le réseau</p>",
@@ -120,8 +120,8 @@ export let dict: {
             },
             lo02: {
                 title: {
-                    fr: "Application de paiement pour un bar",
-                    en: "Payment app for a bar",
+                    fr: "Jeu vidéo an architecture MVC",
+                    en: "Video game with a MVC model",
                 },
                 description: {
                     fr: '<p>Ce projet en <span class="important">Java</span> est un jeu vidéo basique doté d\'une interface graphique, qui suit l\'architecture <span class="important">Model View Controller</span>. C\'est un jeu de stratégie dans lequel on peut paramétrer notre armée puis la déployer contre celle de l\'adversaire dans différentes zones de batailles. Il utilise Java Swing pour la création du GUI et du multi-threading pour la simulation de comabats.<br>Ce projet a été réalisé dans le cadre de la matière "Principe et pratique de la programmation orientée objets" en automne 2022</p>',
@@ -131,8 +131,8 @@ export let dict: {
             },
             nf05: {
                 title: {
-                    fr: "Application de paiement pour un bar",
-                    en: "Payment app for a bar",
+                    fr: "Languages C et Python",
+                    en: "C and Python languages",
                 },
                 description: {
                     fr: '<p>Dans la matière "Introduction aux langages C et Python" (suivie au printemps 2021), j\'ai pu créer une <span class="important">application console en C</span> représentant une simulation d\'un gestionnaire de parking, ainsi qu\'une application en <span class="important">Python</span> simulant un réseau social. Cette application python est un serveur web, avec une base de données et un frontend Bootstrap.</p>',
@@ -144,8 +144,8 @@ export let dict: {
         divers: {
             unrealEngine: {
                 title: {
-                    fr: "Application de paiement pour un bar",
-                    en: "Payment app for a bar",
+                    fr: "Animation d'atelier de création de jeu vidéo",
+                    en: "Video game creation workshop",
                 },
                 description: {
                     fr: "<p>Au lycée, j'ai eu l'occasion d'apprendre à utiliser le logiciel de création de jeux vidéos en 3D <span class=\"important\">\"Unreal Engine\"</span> avec des amis. Grâce à cette expérience, j'ai pu animer un atelier de création de jeux vidéos pour l'association familiale de l'<span class=\"important\">UDAF Aube</span> durant plusieurs mois.</p>",
@@ -155,12 +155,12 @@ export let dict: {
             },
             blender: {
                 title: {
-                    fr: "Application de paiement pour un bar",
-                    en: "Payment app for a bar",
+                    fr: "Design 3D",
+                    en: "3D design",
                 },
                 description: {
-                    fr: '<p>Dans mon temps libre et lorsque je ne programme pas, j\'aime faire du design 3D sur Blender, un logiciel puissant et open-source.<br><span class="important">Toutes les icones en 3D sur ce site ont été faites à la main sur Blender !</span></p>',
-                    en: '<p>During my spare time and when I\'m not programming, I like to practise 3D modeling on Blender, a powerful and open-source software.<br><span class="important">All of the 3D icons on this website have been handmade with Blender!</span></p>',
+                    fr: '<p>Dans mon temps libre, j\'apprécie faire du design 3D sur Blender, un logiciel puissant et open-source.<br><span class="important">Toutes les icones en 3D sur ce site ont été faites à la main sur Blender !</span></p>',
+                    en: '<p>During my spare, I enjoy practising 3D modeling on Blender, a powerful and open-source software.<br><span class="important">All of the 3D icons on this website have been handmade with Blender!</span></p>',
                 },
                 link: "",
             },
