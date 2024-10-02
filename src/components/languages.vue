@@ -1,16 +1,17 @@
 <script setup lang="ts">
+import { langName } from "../ts/languages";
+
+defineProps<{ lang: langName }>();
 const emit = defineEmits(["changeLanguage"]);
 function click(lang: string) {
     emit("changeLanguage", lang);
-    document.querySelector("img")?.classList.remove("active");
-    document.querySelector(`#${lang}`)?.classList.add("active");
 }
 </script>
 
 <template>
     <div id="languageChoice">
-        <img src="../assets/france.svg" id="fr" @click="click('fr')" class="active" />
-        <img src="../assets/UK.svg" id="en" @click="click('en')" />
+        <img src="../assets/france.svg" id="fr" @click="click('fr')" :class="lang == 'fr' ? 'active' : ''" />
+        <img src="../assets/UK.svg" id="en" @click="click('en')" :class="lang == 'en' ? 'active' : ''" />
     </div>
 </template>
 

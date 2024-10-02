@@ -19,6 +19,10 @@ export let dict: {
             fr: "Voir le code",
             en: "Go to code",
         },
+        myCV: {
+            fr: "Mon CV",
+            en: "My CV",
+        },
     },
     welcomePage: {
         sujet: {

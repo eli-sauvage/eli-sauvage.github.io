@@ -1,13 +1,16 @@
 <script setup lang="ts">
-function openCv(){
-    window.open("https://eli-sauvage.github.io/CV.pdf", "_blank")
+import { langName, dict } from "../ts/languages";
+let props = defineProps<{ lang: langName }>();
+function openCv() {
+    if (props.lang == "fr")
+        window.open("https://eli-sauvage.github.io/CV", "_blank");
+    else if (props.lang == "en")
+        window.open("https://eli-sauvage.github.io/CV-en", "_blank");
 }
 </script>
 
 <template>
-    <div id="CV" @click="openCv">
-        Mon CV
-    </div>
+    <div id="CV" @click="openCv">{{ dict.general.myCV[lang] }}</div>
 </template>
 
 <style scoped lang="sass">
