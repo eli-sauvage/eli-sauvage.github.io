@@ -1,4 +1,6 @@
 .direnv
+dist
+
 # Logs
 logs
 *.log
