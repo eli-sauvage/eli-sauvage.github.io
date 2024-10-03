@@ -68,7 +68,7 @@ export let dict: {
             portfolio: {
                 title: {
                     fr: "Création de ce portfolio",
-                    en: "Creatio of this portfolio",
+                    en: "Creation of this portfolio",
                 },
                 description: {
                     fr: '<p>Ce portfolio a été créé grâce au framework <span class="important">Vue.js</span>. Il est actuellement hébergé sur Github pages et déployé automatiquement avec Github Actions. Le moteur <span class="important">Vite</span> a été utilisé afin de l\'exporter en version statique. Les icônes 3D on été créés avec Blender.</p>',
