@@ -8,20 +8,32 @@ import { Ref, ref, VueElement } from "vue";
 import { langName } from "./ts/languages";
 import CV from "./components/CV.vue";
 
-let lang = ref("fr") as Ref<langName>;
+let query = new URLSearchParams(window.location.search);
+let lang: Ref<langName> = ref("fr");
+if (query.get("lang") == "en") {
+    changeLanguage("en");
+} else {
+    changeLanguage("fr");
+}
 function changeLanguage(language: "fr" | "en") {
-  lang.value = language;
+    let url = new URL(window.location.toString());
+    let query = new URLSearchParams(url.search);
+    query.set("lang", language);
+    url.search = query.toString();
+    window.history.replaceState({}, "", url);
+
+    lang.value = language;
 }
 </script>
 
 <template>
-  <languages :lang="lang" @changeLanguage="changeLanguage"></languages>
-  <CV :lang="lang" />
-  <WelcomePage :lang="lang" />
-  <div id="global">
-    <SideMenu :lang="lang" />
-    <Content :lang="lang" />
-  </div>
+    <languages :lang="lang" @changeLanguage="changeLanguage"></languages>
+    <CV :lang="lang" />
+    <WelcomePage :lang="lang" />
+    <div id="global">
+        <SideMenu :lang="lang" />
+        <Content :lang="lang" />
+    </div>
 </template>
 
 <style scoped lang="sass">
