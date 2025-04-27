@@ -10,8 +10,18 @@ function click(lang: string) {
 
 <template>
     <div id="languageChoice">
-        <img src="../assets/france.svg" id="fr" @click="click('fr')" :class="lang == 'fr' ? 'active' : ''" />
-        <img src="../assets/UK.svg" id="en" @click="click('en')" :class="lang == 'en' ? 'active' : ''" />
+        <img
+            src="../assets/france.svg"
+            id="fr"
+            @click="click('fr')"
+            :class="lang == 'fr' ? 'active' : ''"
+        />
+        <img
+            src="../assets/UK.svg"
+            id="en"
+            @click="click('en')"
+            :class="lang == 'en' ? 'active' : ''"
+        />
     </div>
 </template>
 

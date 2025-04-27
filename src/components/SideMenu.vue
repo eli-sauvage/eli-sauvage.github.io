@@ -22,8 +22,12 @@ window.onscroll = function () {
 
 <template>
     <div id="sideMenu">
-        <div v-for="(item, index) in Object.keys(dict.sideMenu)" v-bind:id="item" :class="{ currentType: index === 0 }"
-            @click="scrollTo(index)">
+        <div
+            v-for="(item, index) in Object.keys(dict.sideMenu)"
+            v-bind:id="item"
+            :class="{ currentType: index === 0 }"
+            @click="scrollTo(index)"
+        >
             <p class="typetext">{{ dict.sideMenu[item][lang] }}</p>
         </div>
     </div>

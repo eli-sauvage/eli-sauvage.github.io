@@ -1,4 +1,4 @@
-export default function() {
+export default function () {
     let sideMenu = document.querySelector("#sideMenu");
     let titles = sideMenu?.children;
     let projects = document.querySelectorAll(".projectType");
@@ -16,7 +16,9 @@ export default function() {
                 size > computeVisibleSize(projects[largestContentIndex])
             ) {
                 largestContentIndex = i;
-                document.querySelector(".currentType")?.classList.remove("currentType");
+                document
+                    .querySelector(".currentType")
+                    ?.classList.remove("currentType");
                 titles[largestContentIndex].classList.add("currentType");
             }
         }
