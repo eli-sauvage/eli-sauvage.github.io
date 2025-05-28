@@ -60,10 +60,9 @@ export let dict: {
                     en: "Payment app for a bar",
                 },
                 description: {
-                    fr: "<p>Pour un bar de ma ville natale dont les paiements au comptoir prennent trop de temps et créent de l'attente, je suis actuellement en train de créer un site web permettant de commander puis payer en ligne ses bières. Ce service utilise l'API de Stripe pour la gestion des paiements.<br>J'ai codé le front-end avec Vue.js et le backend avec Rust, un language de bas niveau à haute performances, et qui permet entre autres une garantie de la sécurité mémoire.</p>",
-                    en: "<p>For a bar situated un my home town, for which the payments were taking too long and creating delays, I am currently developping a website allowing customers to order and pay their beer online. This app uses the Stripe API for managing secure payments.<br>I programmed the frontend with Vue.js and the backend with Rust, a low-leved, high performance and memory safe language.</p>",
+                    fr: "<p>Pour un bar de ma ville natale dont les paiements au comptoir prennent trop de temps et créent de l'attente, je suis actuellement en train de créer un site web permettant de commander puis payer en ligne ses bières. Ce service utilise l'API de Stripe pour la gestion des paiements.<br>J'ai codé le front-end avec Vue.js et le backend avec Rust, un language de bas niveau à haute performances, et qui permet entre autres une garantie de la sécurité mémoire.<br> Le projet n'est pas accessible en open-source car il est en voie d'être commercialisé. N'hésitez pas à me contacter pour plus d'infos.</p>",
+                    en: "<p>For a bar situated un my home town, for which the payments were taking too long and creating delays, I am currently developping a website allowing customers to order and pay their beer online. This app uses the Stripe API for managing secure payments.<br>I programmed the frontend with Vue.js and the backend with Rust, a low-leved, high performance and memory safe language.<br>The code is currently closed-source because it will soon be commercialized. Feel free to contact me it you have questions.</p>",
                 },
-                link: "https://github.com/eli-sauvage/biere-n-collect",
             },
             portfolio: {
                 title: {
